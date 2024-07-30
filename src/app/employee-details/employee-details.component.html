@@ -1,0 +1,11 @@
+<!--Employee Detail Html-->
+<div class="event" *ngFor="let employee of employee$ | async">
+    <p>Employee ID : {{ employee.employeeID }}</p>
+    <p>First Name : {{ employee.firstName  }}</p>
+    <p>Last Name : {{ employee.lastName }}</p>
+    <p>Role : {{ employee.role }}</p>
+    <p>Department : {{ employee.department }}</p>
+    <p>Date Of Joining : {{ employee.dateOfJoining }}</p>
+    <p>Performance Rating : {{ employee.performanceRating }}</p>
+  </div>
+  

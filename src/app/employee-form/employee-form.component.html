@@ -1,0 +1,124 @@
+<!--Employee Form Html File-->
+<div class="form-container">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="employeeID">Employee ID:</label>
+        <input type="text" id="employeeID" formControlName="employeeID" />
+        <div
+          *ngIf="
+          employeeForm.get('employeeID')?.hasError('required') &&
+          employeeForm.get('employeeID')?.touched
+          "
+          class="error"
+        >
+        Employee ID is required.
+        </div>
+        <div
+        *ngIf="
+        employeeForm.controls['employeeID'].invalid &&
+          (employeeForm.controls['employeeID'].dirty ||
+          employeeForm.controls['employeeID'].touched)
+        "
+        class="error"
+      >
+      Employee Id Should Unique
+      </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" />
+        <div
+          *ngIf="
+          employeeForm.get('firstName')?.hasError('required') &&
+          employeeForm.get('firstName')?.touched
+          "
+          class="error"
+        >
+        First Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="receiver">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" />
+        <div
+          *ngIf="
+          employeeForm.get('lastName')?.hasError('required') &&
+          employeeForm.get('lastName')?.touched
+          "
+          class="error"
+        >
+        Last Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" id="destination" formControlName="role" />
+        <div
+          *ngIf="
+          employeeForm.get('role')?.hasError('required') &&
+          employeeForm.get('role')?.touched
+          "
+          class="error"
+        >
+          Role is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <input type="text" id="department" formControlName="department" />
+        <div
+          *ngIf="
+          employeeForm.get('department')?.hasError('required') &&
+          employeeForm.get('department')?.touched
+          "
+          class="error"
+        >
+        Department is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateOfJoining">Date Of Joining:</label>
+        <input type="text" id="dateOfJoining" formControlName="dateOfJoining" />
+        <div
+          *ngIf="
+          employeeForm.get('dateOfJoining')?.hasError('required') &&
+          employeeForm.get('dateOfJoining')?.touched
+          "
+          class="error"
+        >
+        Date Of Joining is required.
+        </div>
+        <div
+        *ngIf="
+        employeeForm.controls['dateOfJoining'].invalid &&
+          (employeeForm.controls['dateOfJoining'].dirty ||
+          employeeForm.controls['dateOfJoining'].touched)
+        "
+        class="error"
+      >
+      Date Of Joining  must be in YYYY-MM-DD format.
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="performanceRating">Performance Rating:</label>
+        <input type="text" id="performanceRating" formControlName="performanceRating" />
+        <div
+          *ngIf="
+          employeeForm.get('performanceRating')?.hasError('required') &&
+          employeeForm.get('performanceRating')?.touched
+          "
+          class="error"
+        >
+        Performance Rating is required.
+        </div>
+      </div>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

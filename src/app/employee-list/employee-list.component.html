@@ -1,0 +1,46 @@
+
+
+<div class="d-flex justify-content-between mt-4">
+    <h2 class="mb-0">Employee</h2>
+    <button class="btn btn-primary col-md-2"[routerLink]="['/employee-form']" >Add New </button>
+  
+  </div>
+  <div class="d-flex justify-content-between mt-4">
+    <div class="form-group d-flex">
+      <input type="text"  (input)="searchEmp($event)" class="form-control mr-2" placeholder="Search with  Id">
+    
+    </div>
+  </div>
+  
+  
+  <div class="container mt-4">
+    <table class="table">
+      <thead>
+        <th>Employee Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        <th>Department</th>
+        <th>Date Of Joining</th>
+        <th>Performance Rating</th>
+        <th>Action</th>
+    
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of filteredEmployees$ | async">
+          <td>{{employee.employeeID}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.role}}</td>
+          <td>{{employee.department}}</td>
+          <td>{{employee.dateOfJoining}}</td>
+          <td>{{employee.performanceRating}}</td>
+          <td>
+            <button [routerLink]="['/employee-details/', employee.id]" class="btn btn-info btn-sm">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  
